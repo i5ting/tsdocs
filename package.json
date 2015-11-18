@@ -1,5 +1,5 @@
 {
-  "name": "tsdoc",
+  "name": "tsdocs",
   "version": "1.0.2",
   "description": "typescriptlang.org",
   "main": "index.js",
@@ -9,7 +9,8 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "tsdoc": "index.js"
+    "tsdoc": "index.js",
+    "tsdocs": "index.js"
   },
   "author": "i5ting",
   "license": "ISC",
