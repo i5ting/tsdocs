@@ -1,6 +1,6 @@
 {
   "name": "tsdocs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "typescriptlang.org",
   "main": "index.js",
   "scripts": {
