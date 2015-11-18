@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Samples - Welcome to TypeScript</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />    
+    <link type="text/css" rel="stylesheet" href="/content/TsWeb2.css" />
+    <link rel="stylesheet" href="/Content/tsmig.css" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" sizes="48x48" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon64.png" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/favicon128.png" type="image/png" sizes="128x128" />
+    <script type="text/javascript" src="/Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.js"></script>
+    <script>
+
+        function reportAction(n, t, i) {
+            return ga("send", "event", "click", n, t, i), !0
+        }
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-64034028-1', 'auto');
+
+        // strip off trailing slashes
+        var pathnameWithoutTrailingSlash = window.location.pathname.toLowerCase();
+        var pathnameLength = pathnameWithoutTrailingSlash.length;
+        if (pathnameLength > 1 && pathnameWithoutTrailingSlash.lastIndexOf("/") == pathnameLength - 1) {
+            pathnameWithoutTrailingSlash = pathnameWithoutTrailingSlash.substring(0, pathnameLength - 1);
+        }
+        ga("send", "pageview", pathnameWithoutTrailingSlash);
+
+        window.onhashchange = function () {
+            ga("send", "pageview", window.location.pathname.toLowerCase() + window.location.hash);
+        };
+
+    </script>
+</head>
+<body class="samples" >
+    <nav>
+        <div class="centered-container">
+            <div class="clearfix">
+                <a id="homelink" class="selected" href="/" title="TypeScript">
+                    <div>TypeScript</div>
+
+                </a>
+                <a id="tutorial-link" class="minor with-subnav" href="/Tutorial">learn</a>
+                <div class="subnav" id="sn-learn" data-owner="#tutorial-link" data-hover-class="show-learn">
+                    <a id="tutorial-subnav-link" class="sub" href="/Tutorial" title="Learn TypeScript with a Guided Tutorial">tutorial</a>
+                    <a id="handbook-subnav-link" class="sub" href="/Handbook" title="Deep dive into all of TypeScript's features">handbook</a>
+                    <a id="samples-subnav-link" class="sub" href="/Samples" title="See TypeScript in action in these samples">samples</a>
+                    <a href="https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md" title="Read the spec">language spec</a>
+                </div>
+                <a id="playground-link" class="minor" href="/Playground">play</a>
+                <div class="subnav" id="sn-play" data-owner="#playground-link" data-hover-class="show-play" data-allow-click="true"></div>
+                <a id="dl-link" class="minor with-subnav" href="/#Download">download</a>
+                <div class="subnav" id="sn-dl" data-owner="#dl-link" data-hover-class="show-dl">
+                    <a class="sub" style="font-family: Consolas, sans-serif; background-color: #eee;">npm i -g typescript</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48739" onclick="reportAction('Download', 'VS2013', {'location': 'header'})">VS2013</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48593" onclick="reportAction('Download', 'VS2015', {'location': 'header'})">VS2015</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript" onclick="reportAction('Download', 'source', {'location': 'header'})">the source</a>
+                </div>
+                <a id="interact-link" class="minor with-subnav" href="https://github.com/Microsoft/TypeScript">interact</a>
+                <div class="subnav" id="sn-int" data-owner="#interact-link" data-hover-class="show-int">
+                    <a class="sub" href="http://stackoverflow.com/questions/tagged/typescript">Stack Overflow</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript/issues">file bug</a>
+                    <a class="sub" href="http://blogs.msdn.com/b/typescript/">blog</a>
+                    <a class="sub" href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+
+<div class="intro">
+    <h1>TypeScript Samples</h1>
+    <h3>Learning TypeScript by Example</h3>
+
+    <ul>
+        <li><a href="/Samples#HelloWorld">Hello World</a></li>
+        <li><a href="/Samples#Raytracer">Raytracer</a></li>
+        <li><a href="/Samples#TodoMVC">TodoMVC</a></li>
+        <li><a href="/Samples#ImageBoard">ImageBoard</a></li>
+        <li><a href="/Samples#JQuery">JQuery Parallax Starfield</a></li>
+        <li><a href="/Samples#D3">D3 Visualization</a></li>
+        <li><a href="/Samples#Warship">Warship Combat</a></li>
+        <li><a href="/Samples#Encyclopedia">Encyclopedia App</a></li>
+    </ul>
+</div>
+
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="HelloWorld">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0 col-lg-push-4">
+                <h2>Hello World <span class="subtitle">Ground-floor example of types and classes</span></h2>
+                <p>This sample shows basic class definition and instantiation.</p>
+                <p><button class="dl" id="browse-hello-world" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/greeter' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="Button9" onclick="    window.open( '/Sample/greeter/greeter.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0 col-lg-pull-8">
+                <img src="/content/images/greeter_400x300.png" alt="Hello World sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="Raytracer">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0">
+                <h2>Raytracer<span class="subtitle">An implementation of TypeScript-based raytracer</span></h2>
+                <p>This sample implements a DOM canvas-based raytracer.  Notable features include:</p>
+                <ul>
+                    <li>Use of the DOM Canvas</li>
+                    <li>Use of a wide range of TypeScript language features including interfaces, classes, modules, accessibility modifiers, and casts</li>
+                </ul>
+                <p><button class="dl" id="Button5" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/raytracer' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="Button6" onclick="    window.open( '/Sample/raytracer/raytracer.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0">
+                <img src="/content/images/raytracer_400x300.png" alt="Raytracer Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="TodoMVC">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0 col-lg-push-4">
+                <h2>TodoMVC <span class="subtitle">A TypeScript version of the class TodoMVC using Backbone.js and jQuery</span></h2>
+                <p>This sample shows an implementation of the Backbone.js TODO sample derived from <a href="https://github.com/addyosmani/todomvc" target="_blank">https://github.com/addyosmani/todomvc</a>.  The following TypeScript integration points are highlighted:</p>
+                <ul>
+                    <li><strong>Backbone.js</strong>: Using TypeScript classes to create Backbone models and views</li>
+                    <li><strong>jQuery</strong>: Using jQuery for all DOM manipulation</li>
+                </ul>
+                <p><button class="dl" id="browse-todomvc" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/todomvc' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="run-todomvc" onclick="    window.open( '/Sample/todomvc/index.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0 col-lg-pull-8">
+                <img src="/content/images/todomvc_400x300.png" alt="TodoMVC Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="ImageBoard">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0">
+                <h2>ImageBoard <span class="subtitle">A Node.js + Express + MongoDB application built using TypeScript on the server</span></h2>
+                <p>This sample implements a complete Node.js application.  Notable features include:</p>
+                <ul>
+                    <li>Typed usage of Express for server-side MVC</li>
+                    <li>Typed usage of MongoDB for server-side database access</li>
+                    <li>Typed usage of Node.js</li>
+                    <li>Use of TypeScript module syntax targeting the Node.js module system</li>
+                    <li>Visual Studio project file for working with the project</li>
+                </ul>
+                <p><button class="dl" id="browse-imageboard" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/imageboard' )">Browse <span class="hide-small">the code</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0">
+                <img src="/content/images/imageboard_400x300.png" alt="ImageBoard Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="JQuery">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0 col-lg-push-4">
+                <h2>JQuery Parallax Starfield<span class="subtitle">A JQuery application built to show simple JQuery usage</span></h2>
+                <p>This sample implements a small JQuery application.  Notable features include:</p>
+                <ul>
+                    <li>Typed usage of JQuery</li>
+                </ul>
+                <p><button class="dl" id="Button1" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/jquery' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="Button2" onclick="    window.open( '/Sample/jquery/parallax.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0 col-lg-pull-8">
+                <img src="/content/images/jquery_400x300.png" alt="JQuery Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="D3">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0">
+                <h2>D3 Visualization<span class="subtitle">An application built to show use of D3 and canvas-based visualization</span></h2>
+                <p>This sample implements a small D3 visualization.  Notable features include:</p>
+                <ul>
+                    <li>Typed usage of D3</li>
+                    <li>Use of the DOM Canvas</li>
+                </ul>
+                <p><button class="dl" id="Button3" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/d3' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="Button4" onclick="    window.open( '/Sample/d3/perf.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0">
+                <img src="/content/images/d3_400x300.png" alt="D3 Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="Warship">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0 col-lg-push-4">
+                <h2>Warship Combat<span class="subtitle">A full battleship-clone</span></h2>
+                <p>This sample implements a full game using JQuery and JQuery UI.  Notable features include:</p>
+                <ul>
+                    <li>Typed usage of JQuery and JQuery UI</li>
+                    <li>Use of getters/setters</li>
+                    <li>Use of traditional OO code design, including access modifiers</li>
+                </ul>
+                <p><button class="dl" id="Button7" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/warship' )">Browse <span class="hide-small">the code</span> </button> <button class="run" id="Button8" onclick="    window.open( '/Sample/warship/default.html' )">Run <span class="hide-small">the sample</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0 col-lg-pull-8">
+                <img src="/content/images/warship_400x300.png" alt="Warship Combat Sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-row">
+    <div class="sample-centered">
+        <div class="row has-hash-nav" data-hash-nav="Encyclopedia">
+            <div class="col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-0">
+                <h2>Encyclopedia App <span class="subtitle">A complete Windows 8 Store application built with HTML, CSS, and TypeScript</span></h2>
+                <p>The encyclopedia includes a complete sample of a Windows 8 Store application built using TypeScript.  The following features of TypeScript are highlighted:</p>
+                <ul>
+                    <li><strong>Visual Studio project integration</strong>: TypeScript compilation integrated into Visual Studio's build system</li>
+                    <li><strong>Typing WinJS and the Windows Runtime</strong>: Early work shown typing these libraries</li>
+                    <li><strong>Mostly JavaScript in TypeScript</strong>: Code is mostly the original JavaScript, with a little TypeScript</li>
+                    <li><strong>DOM types</strong>: Mix of strongly-typed and weakly-typed DOM manipulation</li>
+                </ul>
+                <p><button class="dl" id="browse-encyclopedia" onclick="window.open( 'https://github.com/Microsoft/TypeScriptSamples/tree/master/win8.1' )">Browse <span class="hide-small">the code</span> </button></p>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-0">
+                <img src="/content/images/win8_400x300.png" alt="Windows 8 Encyclopedia built with TypeScript sample" class="ss img-responsive" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="copyright">
+        <a href="http://go.microsoft.com/fwlink/?LinkId=264945">Privacy Statement</a> | <a href="/Terms" target="_blank">Terms of Use</a> | <a href="http://go.microsoft.com/fwlink/?LinkId=264947">Trademarks</a> &copy; 2012 - 2015 <img src="../Content/images/microsoft_logo_90x16.png" alt="Microsoft Logo" /><br />
+    </div>
+    <script src="/script/hashnav.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var gDomain = "m.webtrends.com";
+    var gDcsId = "dcsjwb9vb00000c932fd0rjc7_5p3t";
+    var gFpc = "WT_FPC";
+    var gTrackEvents = "1";
+    if (document.cookie.indexOf(gFpc + "=") == -1) { document.write("<SCR" + "IPT TYPE='text/javascript' SRC='" + "//" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\/SCR" + "IPT>"); }
+    </script>
+    <script type="text/javascript" src="//js.microsoft.com/library/mnp/2/wt/js/wt.js"></script><noscript><img border="0" name="DCSIMG" width="1" height="1" src="//m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No"></noscript>
+
+   
+</body>
+</html>

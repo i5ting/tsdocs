@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Playground - Welcome to TypeScript</title>
+    <link type="text/css" rel="stylesheet" href="/content/TsWeb2.css" />
+    <link rel="stylesheet" href="/Content/tsmig.css" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" sizes="48x48" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon64.png" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/favicon128.png" type="image/png" sizes="128x128" />
+    <script type="text/javascript" src="/Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.js"></script>
+    <script>
+
+        function reportAction(n, t, i) {
+            return ga("send", "event", "click", n, t, i), !0
+        }
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-64034028-1', 'auto');
+
+        // strip off trailing slashes
+        var pathnameWithoutTrailingSlash = window.location.pathname.toLowerCase();
+        var pathnameLength = pathnameWithoutTrailingSlash.length;
+        if (pathnameLength > 1 && pathnameWithoutTrailingSlash.lastIndexOf("/") == pathnameLength - 1) {
+            pathnameWithoutTrailingSlash = pathnameWithoutTrailingSlash.substring(0, pathnameLength - 1);
+        }
+        ga("send", "pageview", pathnameWithoutTrailingSlash);
+
+        window.onhashchange = function () {
+            ga("send", "pageview", window.location.pathname.toLowerCase() + window.location.hash);
+        };
+
+    </script>
+</head>
+<body class="playground" >
+    <nav>
+        <div class="centered-container">
+            <div class="clearfix">
+                <a id="homelink" class="selected" href="/" title="TypeScript">
+                    <div>TypeScript</div>
+
+                </a>
+                <a id="tutorial-link" class="minor with-subnav" href="/Tutorial">learn</a>
+                <div class="subnav" id="sn-learn" data-owner="#tutorial-link" data-hover-class="show-learn">
+                    <a id="tutorial-subnav-link" class="sub" href="/Tutorial" title="Learn TypeScript with a Guided Tutorial">tutorial</a>
+                    <a id="handbook-subnav-link" class="sub" href="/Handbook" title="Deep dive into all of TypeScript's features">handbook</a>
+                    <a id="samples-subnav-link" class="sub" href="/Samples" title="See TypeScript in action in these samples">samples</a>
+                    <a href="https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md" title="Read the spec">language spec</a>
+                </div>
+                <a id="playground-link" class="minor" href="/Playground">play</a>
+                <div class="subnav" id="sn-play" data-owner="#playground-link" data-hover-class="show-play" data-allow-click="true"></div>
+                <a id="dl-link" class="minor with-subnav" href="/#Download">download</a>
+                <div class="subnav" id="sn-dl" data-owner="#dl-link" data-hover-class="show-dl">
+                    <a class="sub" style="font-family: Consolas, sans-serif; background-color: #eee;">npm i -g typescript</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48739" onclick="reportAction('Download', 'VS2013', {'location': 'header'})">VS2013</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48593" onclick="reportAction('Download', 'VS2015', {'location': 'header'})">VS2015</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript" onclick="reportAction('Download', 'source', {'location': 'header'})">the source</a>
+                </div>
+                <a id="interact-link" class="minor with-subnav" href="https://github.com/Microsoft/TypeScript">interact</a>
+                <div class="subnav" id="sn-int" data-owner="#interact-link" data-hover-class="show-int">
+                    <a class="sub" href="http://stackoverflow.com/questions/tagged/typescript">Stack Overflow</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript/issues">file bug</a>
+                    <a class="sub" href="http://blogs.msdn.com/b/typescript/">blog</a>
+                    <a class="sub" href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+<link rel="stylesheet" type="text/css" href="/script/vs/editor/css/vs-theme.css" />
+
+<div id="playground-host" style="">
+    <div id="wrapper" style="padding-left: 20px; padding-right: 20px;">
+        <div style="float: left; padding-left: 50px;">
+            <span class="frame-title">TypeScript</span>
+            <select id="examples">
+                <option value="">Select...</option>
+                <option value="walkthrough1.ts">Walkthrough: JavaScript</option>
+                <option value="walkthrough1.1.ts">Walkthrough: Types</option>
+                <option value="walkthrough2.ts">Walkthrough: Classes</option>
+                <option value="small.ts">Walkthrough: Inheritance</option>
+                <option value="walkthrough2.1.ts">Walkthrough: Generics</option>
+                <option value="walkthrough3.ts">Walkthrough: Modules</option>
+                <option value="raytracer.ts">Raytracer</option>
+                <option value="modern_hello_world.ts">New Features</option>
+            </select>
+            <button id="share" class="playground-button">Share</button>
+            <span id="share-message" style="display:none;"></span>
+        </div>
+        <div style="float: right; padding-right: 50px;" id="runDiv">
+            <button id="execute" class="playground-button">Run</button>
+            <span class="frame-title">JavaScript</span>
+        </div>
+        <div style="clear: both"></div>
+        <div id="typescriptEditor" style="height: 500px; position: relative; top: 20; left: 0; border: 1px solid grey;"></div>
+        <div id="javascriptEditor" style="height: 500px; position: relative; top: -502px; border: 1px solid grey;"></div>
+        <div style="clear: both"></div>
+    </div>
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+        var startTime = (new Date()).getTime();
+</script>
+<script type="text/javascript">
+        var require = {
+            baseUrl: "/Script"
+        };
+</script>
+<script type="text/javascript" src="/Script/vs/loader.js"></script>
+<script type="text/javascript" src="/Script/vs/editor/editor.main.nls.js"></script>
+<script type="text/javascript" src="/Script/vs/editor/editor.main.js"></script>
+<script type="text/javascript">
+
+        // The loader expects a console object to exist with a function info. Make sure this is added if
+        // we are in a browser that does not support the complete implementation of console.
+        if (!window.console.info) {
+            window.console. info = function(){}
+        }
+
+        (function () {
+            'use strict';
+
+            var examples = document.getElementById('examples');
+            var wrapper = document.getElementById('wrapper');
+
+            var lhs = {
+                domNode: document.getElementById('typescriptEditor'),
+                editor: null
+            };
+
+            var rhs = {
+                domNode: document.getElementById('javascriptEditor'),
+                editor: null
+            };
+
+            var IDLE_STATE = 0,
+                EDITORS_RENDERED = 1,
+                SAMPLE_RENDERED = 2,
+                SAMPLE_COLORED = 3,
+                SAMPLE_COMPILED = 4,
+                FINISHED = 5,
+                state = IDLE_STATE;
+
+            // ------------ Loading logic
+            (function () {
+                var DEFAULT_EXAMPLE = '/examples/walkthrough2.ts';
+
+                var editorLoaded = false, typescriptModeLoaded = false, javascriptModeLoaded = false, sampleLoaded = false;
+                var typescriptMode = null, javascriptMode = null, sample = '';
+
+                require(['vs/editor/editor.main', 'vs/nls!vs/editor/editor.main', 'vs/css!vs/editor/editor.main'], function () {
+                    editorLoaded = true;
+
+                    Monaco.Editor.getOrCreateMode('text/typescript').then(function (mode) {
+                        typescriptModeLoaded = true;
+                        typescriptMode = mode;
+                        onSomethingLoaded();
+                    });
+
+                    Monaco.Editor.getOrCreateMode('text/javascript').then(function (mode) {
+                        javascriptModeLoaded = true;
+                        javascriptMode = mode;
+                        onSomethingLoaded();
+                    });
+
+                    onSomethingLoaded();
+                });
+
+                (function () {
+                    var queryStringSrcStart = window.location.hash.indexOf("#src=");
+                    var tutorialStart = window.location.hash.indexOf('#tut=');
+                    var localStorageStart = window.localStorage && window.localStorage["src"];
+                    
+
+                    function loadTutorial() {
+                        var tutorialName = window.location.hash.substring('#tut='.length);
+                        var path = '/examples/' + tutorialName + '.ts';
+                        WinJS.xhr({ url: path }).then(function (xhr) {
+                            sample = xhr.responseText;
+                            sampleLoaded = true;
+                            onSomethingLoaded();
+                        }, function (e) {
+                            loadInitialText(false, true, true);
+                        });
+                    }
+                    function loadByQueryString() {
+                        var encoded = window.location.hash.substring("#src=".length);
+                        try {
+                            sample = decodeURIComponent(encoded);
+                            sampleLoaded = true;
+                            onSomethingLoaded();
+                            return;
+                        } catch (e) {
+                            console.log("unable to parse #src= uri component");
+                            // intentionally fall through to alternatives if decode fails
+                        }
+                    }
+
+                    function loadByLocalStorage() {
+                        sampleLoaded = true;
+                        sample = localStorageStart;
+                        onSomethingLoaded();
+                    }
+
+                    function loadDefault() {
+                        examples.selectedIndex = 3;
+                        WinJS.xhr({ url: DEFAULT_EXAMPLE }).then(function (xmlHttpReq) {
+                            sampleLoaded = true;
+                            sample = xmlHttpReq.responseText;
+                            onSomethingLoaded();
+                        });
+                    }
+
+                    function loadInitialText(tryTutorial, tryQueryString, tryLocalStorage) {
+                        if (tryTutorial && tutorialStart === 0)
+                            loadTutorial();
+                        else if (tryQueryString && queryStringSrcStart === 0)
+                            loadByQueryString();
+                        else if (tryLocalStorage && localStorageStart)
+                            loadByLocalStorage();
+                        else
+                            loadDefault();
+                    }
+
+                    loadInitialText(true, true, true);
+                })();
+
+                function onSomethingLoaded() {
+                    if (state === IDLE_STATE && editorLoaded) {
+                        lhs.editor = Monaco.Editor.create(lhs.domNode, {
+                            value: '',
+                            mode: 'text/plain',
+                            fontIsMonospace: true,
+                            suggestOnTriggerCharacters: true,
+                            showTypeScriptWarnings: false
+                        });
+                        rhs.editor = Monaco.Editor.create(rhs.domNode, {
+                            value: '',
+                            mode: 'text/plain',
+                            fontIsMonospace: true,
+                            readOnly: true
+                        });
+                        state = EDITORS_RENDERED;
+                        console.info('editors rendered @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                    }
+                    if (state === EDITORS_RENDERED && sampleLoaded) {
+                        lhs.editor.getModel().setValue(sample);
+                        state = SAMPLE_RENDERED;
+                        console.info('sample rendered @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                    }
+                    if (state === SAMPLE_RENDERED && typescriptModeLoaded) {
+                        lhs.editor.getModel().setValue(lhs.editor.getModel().getValue(), typescriptMode);
+                        console.info('sample colored @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                        console.info('starting compilation @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                        triggerCompile();
+                        lhs.editor.addListener("change", function () {
+                            triggerCompile();
+                        });
+                        state = SAMPLE_COMPILED;
+                        console.info('sample compiled @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                    }
+                    if (state === SAMPLE_COMPILED && javascriptModeLoaded) {
+                        rhs.editor.getModel().setValue(rhs.editor.getModel().getValue(), javascriptMode);
+                        state = FINISHED;
+                        console.info('sample compiled & colored @ ' + ((new Date()).getTime() - startTime) + 'ms');
+                    }
+                }
+            })();
+
+            // ------------ Resize logic
+            function resize() {
+                // incorporate header and footer and adaptive layout
+                var headerSize = 0; // 120
+                var footerSize = 51;
+
+                var horizontalSpace = 10;
+                var wrapperSizeDiff = headerSize + footerSize;
+                var windowHeight = window.innerHeight || document.body.offsetHeight || document.documentElement.offsetHeight;
+
+                wrapper.style.height = (windowHeight - wrapper.offsetTop - wrapperSizeDiff) + "px";
+                var halfWidth = Math.floor((wrapper.clientWidth - 40) / 2) - 8;
+                halfWidth -= (horizontalSpace / 2);
+
+                // Layout lhs
+                var lhsSizeDiff = wrapperSizeDiff + 40;
+                lhs.domNode.style.width = halfWidth + "px";
+                lhs.domNode.style.height = (windowHeight - wrapper.offsetTop - lhsSizeDiff) + "px";
+                if (lhs.editor) {
+                    lhs.editor.layout();
+                }
+
+                // Layout rhs
+                var rhsSizeDiff = wrapperSizeDiff + 40;
+                rhs.domNode.style.left = (halfWidth + 2 + horizontalSpace) + "px";
+                rhs.domNode.style.width = halfWidth + "px";
+                rhs.domNode.style.height = (windowHeight - wrapper.offsetTop - rhsSizeDiff) + "px";
+                rhs.domNode.style.top = -(wrapper.clientHeight - 38) + "px";
+                if (rhs.editor) {
+                    rhs.editor.layout();
+                }
+            }
+            resize();
+            window.onresize = resize;
+
+            // ------------ Compilation logic
+            var compilerTriggerTimeoutID = null;
+            var triggerCompile = function () {
+                if (compilerTriggerTimeoutID !== null) {
+                    window.clearTimeout(compilerTriggerTimeoutID);
+                }
+
+                compilerTriggerTimeoutID = window.setTimeout(function () {
+                    try {
+                        var model = lhs.editor.getModel(),
+                            mode = model.getMode();
+                        mode.getEmitOutput(model.getAssociatedResource(), 'js').then(function (output) {
+                            if (output && typeof output.content === "string") {
+                                var rhsModel = rhs.editor.getModel();
+                                // Save view state
+                                var viewState = rhs.editor.saveViewState();
+                                // Update content
+                                rhsModel.setValue(output.content);
+                                // Remove flicker: force tokenization
+                                rhsModel.getLineTokens(rhsModel.getLineCount());
+                                // Restore view state
+                                rhs.editor.restoreViewState(viewState);
+                                // Remove flicker: force rendering
+                                rhs.editor.getOffsetForColumn(1, 1);
+                            }
+                        }, function (err) {
+                            if (err.name === 'Canceled') {
+                                return;
+                            }
+
+                            console.error(err);
+                        });
+                    } catch (e) {
+                        console.log("Error from compilation: " + e + "  " + (e.stack || ""));
+                    }
+                }, 100);
+            };
+
+            // ------------ Execution logic
+            document.getElementById("execute").onclick = function () {
+                var external = window.open();
+                var script = external.window.document.createElement("script");
+                script.textContent = rhs.editor.getModel().getValue();
+                external.window.document.body.appendChild(script);
+                //external.window.eval(rhs.editor.getModel().getValue());
+            };
+
+            examples.onchange = function () {
+                var selectedExample = examples.options[examples.selectedIndex].value;
+                if (selectedExample != "") {
+                    WinJS.xhr({ url: '/examples/' + selectedExample }).then(function (xmlHttpReq) {
+                        if (state >= SAMPLE_RENDERED) {
+                            lhs.editor.getModel().setValue(xmlHttpReq.responseText);
+                        }
+                    });
+                }
+            }
+
+            var ignoreHashChange = false;
+
+            document.getElementById("share").onclick = function () {
+                if (state < SAMPLE_RENDERED)
+                    return;
+                var text = lhs.editor.getModel().getValue();
+                var encoded = encodeURIComponent(text);
+                ignoreHashChange = true;
+                window.location = "#src=" + encoded;
+
+                document.getElementById("share-message").style.display = "inline";
+                var decodedHashLength;
+                try {
+                    // this can throw when the hash gets cut off due to URI length in the middle of a %OA style escape
+                    decodedHashLength = decodeURIComponent(window.location.hash).length;
+                } catch (e) {
+                    decodedHashLength = -1;
+                }
+                if (decodedHashLength === text.length + 5) {
+                    document.getElementById("share-message").textContent = " Shareable link now in address bar. ";
+                } else {
+                    document.getElementById("share-message").textContent = " Text buffer too large to share. ";
+                }
+                lhs.editor.addOneTimeListener("change", function () {
+                    document.getElementById("share-message").style.display = "none";
+                });
+            };
+
+            if ("onhashchange" in window) {
+                window.onhashchange = function () {
+                    if(ignoreHashChange) { ignoreHashChange = false; return; }
+                    var queryStringSrcStart = window.location.hash.indexOf("#src=");
+                    if (queryStringSrcStart == 0) {
+                        var encoded = window.location.hash.substring("#src=".length);
+                        try {
+                            var text = decodeURIComponent(encoded);
+                            if (state >= SAMPLE_RENDERED) {
+                                lhs.editor.getModel().setValue(text);
+                            }
+                        } catch (e) {
+                            console.log("unable to parse #src= uri component");
+                        }
+                    }
+                }
+            }
+
+            // Save buffer to localStorage every second if there are changes to model
+            if (window.localStorage) {
+                var lastVersion;
+                setInterval(function () {
+                    if (state < SAMPLE_RENDERED)
+                        return;
+                    var model = lhs.editor.getModel();
+                    var version = model.getVersionId();
+                    if (version !== lastVersion) {
+                        window.localStorage["src"] = model.getValue();
+                        lastVersion = version;
+                    }
+                }, 1000);
+            }
+
+        })();
+
+</script>
+
+    <div class="copyright">
+        <a href="http://go.microsoft.com/fwlink/?LinkId=264945">Privacy Statement</a> | <a href="/Terms" target="_blank">Terms of Use</a> | <a href="http://go.microsoft.com/fwlink/?LinkId=264947">Trademarks</a> &copy; 2012 - 2015 <img src="../Content/images/microsoft_logo_90x16.png" alt="Microsoft Logo" /><br />
+            The code you enter in the TypeScript playground runs entirely in your browser and is not sent to Microsoft.
+    </div>
+    <script src="/script/hashnav.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var gDomain = "m.webtrends.com";
+    var gDcsId = "dcsjwb9vb00000c932fd0rjc7_5p3t";
+    var gFpc = "WT_FPC";
+    var gTrackEvents = "1";
+    if (document.cookie.indexOf(gFpc + "=") == -1) { document.write("<SCR" + "IPT TYPE='text/javascript' SRC='" + "//" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\/SCR" + "IPT>"); }
+    </script>
+    <script type="text/javascript" src="//js.microsoft.com/library/mnp/2/wt/js/wt.js"></script><noscript><img border="0" name="DCSIMG" width="1" height="1" src="//m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No"></noscript>
+
+   
+</body>
+</html>

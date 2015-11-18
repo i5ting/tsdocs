@@ -1,0 +1,411 @@
+﻿/* This file contains fixes that are introduced to facilitate
+    migrating TypeScript's CSS to be Bootstrap-based. 
+    We're using the v1 site's CSS as a baseline for correct appearance. */
+
+/* Homepage bugs ============================== */
+/* Bug: Node.js samples boxes collapse because Bootstrap sets all to border-box by default */
+/* Download button box sizing */
+/* Bug: After conversion to Bootstrap, the code box on the homepage doesn't size correctly */
+/* Bug: Open in Playground buttons on Tutorial */
+#node-samples dl, #node-samples dd, #node-samples dt, #panorama-2 .code, .getbtn a, #main-callout h1, .sample .code .inplayground,
+    .monaco-editor-hover {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+
+/* Bug: After conversion to Bootstrap carousel, the "Scalable" slide doesn't appear */
+#panorama-1 {
+    min-height: 500px;
+}
+#panorama-1 p {
+    color: black;
+}
+
+#home-dlbar, #home-community {
+    min-height: 410px;
+}
+
+/* Feature: Carousel indicators*/
+#home-panorama .carousel-indicators li {
+    border-color: #09f;
+    border-width: 2px;
+}
+
+.left.carousel-control, .right.carousel-control {
+    background: none;
+    filter: initial;
+}
+
+/* Bug: After conversion to Bootstrap carousel, the 2nd and 3rd items jerk on width > 1250px */
+#panorama-2, #panorama-3 {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+    #panorama-2 .pan-wrapper, #panorama-3 .pan-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+/* Bug: Code sample slides down on < 480px width */
+@media screen and (max-width: 775px) {
+    #home-panorama .code {
+        transform: scale(0.75) translate(0, -30px);
+    }
+}
+
+/* Feature: Homepage navigation moving up and introducing subnav layer */
+/* Bug: Bootstrap added an outline */
+nav a.minor {
+    padding: 20px 23px 40px;
+}
+
+nav a.minor.with-subnav {
+    cursor: default;
+}
+
+.tutorial #sn-learn, .handbook #sn-learn, .samples #sn-learn {
+    display: block;
+}
+
+@media screen and (min-width: 776px) {
+    nav .subnav,
+    .tutorial nav.show-dl #sn-learn, .handbook nav.show-dl #sn-learn, .samples nav.show-dl #sn-learn,
+    .tutorial nav.show-int #sn-learn, .handbook nav.show-int #sn-learn, .samples nav.show-int #sn-learn {
+        position: absolute;
+        left: 300px;
+        top: 60px;
+        width: 488px;
+        height: 0px;
+        display: block;
+        opacity: 0;
+        transition-property: opacity, height;
+        transition-duration: 0.5s, 0.01s;
+        transition-timing-function: ease-in-out, step-end;
+        transition-delay: 0, 0.5s;
+        overflow: hidden;
+    }
+
+        nav .subnav a {
+            padding: 5px 10px;
+        }
+
+    nav.show-learn #sn-learn, nav.show-dl #sn-dl, nav.show-int #sn-int,
+    .tutorial nav #sn-learn, .handbook nav #sn-learn, .samples nav #sn-learn {
+        transition-property: height, opacity;
+        transition-duration: 0.01s, 0.5s;
+        transition-timing-function: step-start, ease-in-out;
+        transition-delay: 0;
+        opacity: 1.0;
+        height: 40px;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 775px) {
+
+    nav a.minor {
+        padding: 0;
+        margin: 5px 0 0;
+        
+    }
+    nav .subnav {
+        position: static;
+        left: initial;
+        top: initial;
+        width: auto;
+        height: auto;
+    }
+
+        nav .subnav a {
+            display: block;
+            text-align: center;
+        }
+
+    nav .subnav,
+    .tutorial nav.show-dl #sn-learn, .handbook nav.show-dl #sn-learn, .samples nav.show-dl #sn-learn,
+    .tutorial nav.show-int #sn-learn, .handbook nav.show-int #sn-learn, .samples nav.show-int #sn-learn {
+        max-height: 0px;
+        display: block;
+        opacity: 0;
+        transition-property: opacity max-height;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0;
+        overflow: hidden;
+    }
+
+        nav .subnav a {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+    nav.show-learn #sn-learn, nav.show-dl #sn-dl, nav.show-int #sn-int,
+    .tutorial nav #sn-learn, .handbook nav #sn-learn, .samples nav #sn-learn {
+        transition-property: max-height opacity;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0;
+        opacity: 1.0;
+        max-height: 125px;
+        display: block;
+    }
+
+    #main-callout {
+        margin-top: 275px;
+    }
+
+    .intro {
+        margin-top: 275px !important;
+    }
+}
+
+
+
+/* Samples page ================= */
+.ss {
+    border: 1px solid black;
+}
+
+.samples .sample-centered {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.samples .sample-centered .subtitle {
+    font: 14pt SegoeUI, 'Segoe UI';
+    color: #666;
+    display: block;
+}
+
+.samples .sample-row {
+    padding: 25px 0;
+}
+
+.samples .sample-row:nth-child(odd) {
+    background-color: #efeff2;
+}
+
+/* bug: buttons on the Samples page are losing their setting */
+.samples button.dl, .samples button.run {
+    font-size: 16px !important;
+}
+
+
+
+
+/* Tutorials page =================== */
+.tutorial .center-container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.tutorial hr {
+    border-color: #537900;
+}
+
+
+/* Handbook page =================== */
+.handbook h1 {
+    font: 27pt SegoeUILight, 'Segoe UI Light', SegoeUI, 'Segoe UI', Arial, sans-serif;
+    color: rgb(66, 139, 202);
+}
+    .handbook h1 a:hover {
+        text-decoration: none;
+    }
+
+.handbook h2 {
+    font-size: 18pt;
+    margin-top: 16px;
+}
+
+    .handbook h2 a {
+        color: #444;
+    }
+
+        .handbook h2 a:hover {
+            text-decoration: none;
+        }
+
+.handbook h3 {
+    font-size: 16pt;
+    margin-top: 13px;
+}
+
+.handbook h4 {
+    color: green;
+    font-size: 14pt;
+    margin-top: 10px;
+}
+
+.handbook h5 {
+    font-size: 12pt;
+    margin-top: 8px;
+}
+
+.handbook h6 {
+    color: #666;
+    font-family: SegoeUI, 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+#handbook-nav-container {
+    width: 100%;
+    position: fixed;
+}
+
+@media screen and (max-width: 992px) {
+    #handbook-nav-container {
+        position: static;
+    }
+}
+
+.hb-main {
+    padding-left: 10px;
+}
+
+.hb-main > li {
+    margin-bottom: 10px;
+}
+
+.hb-sub {
+    font-size: 14px;
+    max-height: 5000px;
+    opacity: 1;
+}
+
+.hb-sub.hidden-sub {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.hbn-sub:link, .hbn-sub:visited, .hbn-sub:active, .hbn-sub:hover, .hbn-main:link, .hbn-main:active, .hbn-main:visited, .hbn-main:hover {
+    color: rgb(0,102,204);
+    transition: color ease-in 0.2s;
+}
+.hb-active:link, .hb-active:active, .hb-active:visited, .hb-active:hover {
+    color: #537900;
+    transition: color ease-in 0.2s;
+}
+
+/* Clouds */
+#panorama-1 {
+    background-position: initial initial; background-repeat: initial initial;
+    background-image: linear-gradient(to bottom, #62bbff 0%, #96ddff 100%);
+
+}
+
+#panorama-1 .webgl-hidden-callout {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10px;
+    color: black;
+    z-index: 200;
+}
+#panorama-1 canvas {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+}
+
+#panorama-1.hide-webgl canvas {
+    display: none;
+}
+
+#panorama-1.hide-webgl .webgl-hidden-callout {
+    display: block;
+    z-index: 99;
+}
+#panorama-1.webgl-not-supported .webgl-hidden-callout {
+    display: none;
+}
+
+#panorama-1 .clouds1, 
+#panorama-1 .clouds2, 
+#panorama-1 .clouds3, 
+#panorama-1 .clouds4 {
+    display: none;
+}
+
+#panorama-1.hide-webgl .clouds1, 
+#panorama-1.hide-webgl .clouds2, 
+#panorama-1.hide-webgl .clouds3, 
+#panorama-1.hide-webgl .clouds4 {
+    display: block;
+}
+
+
+
+/* Terms of Use */
+#tou-main h1, #tou-main h2 {
+    line-height: initial;
+}
+
+@media print {
+    nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    #playground-host {
+        margin-top: 285px;
+    }
+}
+
+
+/* feature: Updated download links */
+.dl-info .dl-link {
+        top: 270px;
+        height: 34px;
+        padding: 0 0 0 60px;
+        font-size: 16pt;
+        margin: 0;
+        display: block;
+        position: absolute;
+        background: url('images/icon_sprite_download_white.png') no-repeat 8px 0;
+        color: white;
+    }
+
+.dl-info .dl-link2 {
+        top: 320px;
+    }
+
+/* Monaco bugs */
+.monaco-editor .container:before, .monaco-editor .row:before {
+                content: "";
+                display: inherit;
+}
+.monaco-editor .container:after, .monaco-editor .row:after {
+                clear: inherit;
+}
+.monaco-editor .container {
+                width: auto;
+                margin: inherit;
+                padding: inherit;
+}
+.monaco-editor .close {
+                float: none;
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+                color: inherit;
+                text-shadow: inherit;
+                opacity: inherit;
+                filter: inherit;
+}
+.monaco-editor .row {
+                margin: inherit;
+}
+.monaco-editor .invisible {
+                visibility: visible;
+}

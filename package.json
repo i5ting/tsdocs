@@ -1,0 +1,20 @@
+{
+  "name": "tsdoc",
+  "version": "1.0.2",
+  "description": "typescriptlang.org",
+  "main": "index.js",
+  "scripts": {
+    "start":"npm publish .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "tsdoc": "index.js"
+  },
+  "author": "i5ting",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.2",
+    "open": "0.0.5"
+  }
+}

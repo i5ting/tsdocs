@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Terms of Use</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />    
+    <link type="text/css" rel="stylesheet" href="/content/TsWeb2.css" />
+    <link rel="stylesheet" href="/Content/tsmig.css" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" sizes="48x48" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="/favicon16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon64.png" type="image/png" sizes="64x64" />
+    <link rel="icon" href="/favicon128.png" type="image/png" sizes="128x128" />
+    <script type="text/javascript" src="/Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap.js"></script>
+    <script>
+
+        function reportAction(n, t, i) {
+            return ga("send", "event", "click", n, t, i), !0
+        }
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-64034028-1', 'auto');
+
+        // strip off trailing slashes
+        var pathnameWithoutTrailingSlash = window.location.pathname.toLowerCase();
+        var pathnameLength = pathnameWithoutTrailingSlash.length;
+        if (pathnameLength > 1 && pathnameWithoutTrailingSlash.lastIndexOf("/") == pathnameLength - 1) {
+            pathnameWithoutTrailingSlash = pathnameWithoutTrailingSlash.substring(0, pathnameLength - 1);
+        }
+        ga("send", "pageview", pathnameWithoutTrailingSlash);
+
+        window.onhashchange = function () {
+            ga("send", "pageview", window.location.pathname.toLowerCase() + window.location.hash);
+        };
+
+    </script>
+</head>
+<body >
+    <nav>
+        <div class="centered-container">
+            <div class="clearfix">
+                <a id="homelink" class="selected" href="/" title="TypeScript">
+                    <div>TypeScript</div>
+
+                </a>
+                <a id="tutorial-link" class="minor with-subnav" href="/Tutorial">learn</a>
+                <div class="subnav" id="sn-learn" data-owner="#tutorial-link" data-hover-class="show-learn">
+                    <a id="tutorial-subnav-link" class="sub" href="/Tutorial" title="Learn TypeScript with a Guided Tutorial">tutorial</a>
+                    <a id="handbook-subnav-link" class="sub" href="/Handbook" title="Deep dive into all of TypeScript's features">handbook</a>
+                    <a id="samples-subnav-link" class="sub" href="/Samples" title="See TypeScript in action in these samples">samples</a>
+                    <a href="https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md" title="Read the spec">language spec</a>
+                </div>
+                <a id="playground-link" class="minor" href="/Playground">play</a>
+                <div class="subnav" id="sn-play" data-owner="#playground-link" data-hover-class="show-play" data-allow-click="true"></div>
+                <a id="dl-link" class="minor with-subnav" href="/#Download">download</a>
+                <div class="subnav" id="sn-dl" data-owner="#dl-link" data-hover-class="show-dl">
+                    <a class="sub" style="font-family: Consolas, sans-serif; background-color: #eee;">npm i -g typescript</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48739" onclick="reportAction('Download', 'VS2013', {'location': 'header'})">VS2013</a>
+                    <a class="sub" href="https://www.microsoft.com/en-us/download/details.aspx?id=48593" onclick="reportAction('Download', 'VS2015', {'location': 'header'})">VS2015</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript" onclick="reportAction('Download', 'source', {'location': 'header'})">the source</a>
+                </div>
+                <a id="interact-link" class="minor with-subnav" href="https://github.com/Microsoft/TypeScript">interact</a>
+                <div class="subnav" id="sn-int" data-owner="#interact-link" data-hover-class="show-int">
+                    <a class="sub" href="http://stackoverflow.com/questions/tagged/typescript">Stack Overflow</a>
+                    <a class="sub" href="https://github.com/Microsoft/TypeScript/issues">file bug</a>
+                    <a class="sub" href="http://blogs.msdn.com/b/typescript/">blog</a>
+                    <a class="sub" href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+
+<div id="tou-main">
+    <h1>TypeScriptLang.org Terms of Use</h1>
+
+    <h2>ACCEPTANCE OF TERMS.</h2>
+    <p>The services that Microsoft provides to you are subject to the following Terms of Use (“TOU”). Microsoft reserves the right to update the TOU at any time without notice to you. The most current version of the TOU can be reviewed by clicking on the “Terms of Use” hypertext link located at the bottom of our Web pages.</p>
+
+    <h2>DESCRIPTION OF SERVICES.</h2>
+    <p>Throughout this Web site, Microsoft provides you with access to a variety of resources and information (collectively “Services”). The Services, including any updates, enhancements, new features, and/or the addition of any new Web properties, are subject to the TOU.</p>
+
+    <h2>NON-COMMERCIAL USE LIMITATION.</h2>
+    <p>Unless otherwise specified, the Services are for your educational and non-commercial use. Unless otherwise specified, you may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information or services obtained from the Services. </p>
+
+    <h2>PRIVACY AND PROTECTION OF PERSONAL INFORMATION.</h2>
+    <p>See the Privacy Statement disclosures relating to the collection and use of your information.</p>
+
+    <h2>NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE.</h2>
+    <p>Any software that is made available to download from the Services (“Software”) is the copyrighted work of Microsoft and/or its suppliers. Use of the Software is governed by the terms of the end user license agreement, if any, which accompanies or is included with the Software (“License Agreement”). An end user will be unable to install any Software that is accompanied by or includes a License Agreement, unless he or she first agrees to the License Agreement terms. The Software is made available for download solely for use by end users according to the License Agreement. Any reproduction or redistribution of the Software not in accordance with the License Agreement is expressly prohibited by law, and may result in severe civil and criminal penalties. Violators will be prosecuted to the maximum extent possible.</p>
+    <p>
+        <br>
+        WITHOUT LIMITING THE FOREGOING, COPYING OR REPRODUCTION OF THE SOFTWARE TO ANY OTHER SERVER OR LOCATION FOR FURTHER REPRODUCTION OR REDISTRIBUTION IS EXPRESSLY PROHIBITED, UNLESS SUCH REPRODUCTION OR REDISTRIBUTION IS EXPRESSLY PERMITTED BY THE LICENSE AGREEMENT ACCOMPANYING SUCH SOFTWARE. THE SOFTWARE IS WARRANTED, IF AT ALL, ONLY ACCORDING TO THE TERMS OF THE LICENSE AGREEMENT. EXCEPT AS WARRANTED IN THE LICENSE AGREEMENT, MICROSOFT CORPORATION HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS WITH REGARD TO THE SOFTWARE, INCLUDING ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, WHETHER EXPRESS, IMPLIED OR STATUTORY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT.
+    </p>
+    <p>
+        <br>
+        FOR YOUR CONVENIENCE, MICROSOFT MAY MAKE AVAILABLE AS PART OF THE SERVICES OR IN ITS SOFTWARE PRODUCTS, TOOLS AND UTILITIES FOR USE AND/OR DOWNLOAD. MICROSOFT DOES NOT MAKE ANY ASSURANCES WITH REGARD TO THE ACCURACY OF THE RESULTS OR OUTPUT THAT DERIVES FROM SUCH USE OF ANY SUCH TOOLS AND UTILITIES. PLEASE RESPECT THE INTELLECTUAL PROPERTY RIGHTS OF OTHERS WHEN USING THE TOOLS AND UTILITIES MADE AVAILABLE ON THE SERVICES OR IN MICROSOFT SOFTWARE PRODUCTS.
+    </p>
+    <p>
+        <br>
+        RESTRICTED RIGHTS LEGEND. Any Software which is downloaded from the Services for or on behalf of the United States of America, its agencies and/or instrumentalities (“U.S. Government”), is provided with Restricted Rights. Use, duplication, or disclosure by the U.S. Government is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and (2) of the Commercial Computer Software - Restricted Rights at 48 CFR 52.227-19, as applicable. Manufacturer is Microsoft Corporation, One Microsoft Way, Redmond, WA 98052-6399.
+    </p>
+
+    <h2>NOTICE SPECIFIC TO DOCUMENTS AVAILABLE ON THIS WEB SITE.</h2>
+    <p>Permission to use Documents (such as white papers, press releases, datasheets and FAQs) from the Services is granted, provided that (1) the below copyright notice appears in all copies and that both the copyright notice and this permission notice appear, (2) use of such Documents from the Services is for informational and non-commercial or personal use only and will not be copied or posted on any network computer or broadcast in any media, and (3) no modifications of any Documents are made. Accredited educational institutions, such as K-12, universities, private/public colleges, and state community colleges, may download and reproduce the Documents for distribution in the classroom. Distribution outside the classroom requires express written permission. Use for any other purpose is expressly prohibited by law, and may result in severe civil and criminal penalties. Violators will be prosecuted to the maximum extent possible.</p>
+    <p>
+        <br>
+        Documents specified above do not include the design or layout of the Web site or any other Microsoft owned, operated, licensed or controlled site. Elements of Microsoft Web sites are protected by trade dress, trademark, unfair competition, and other laws and may not be copied or imitated in whole or in part. No logo, graphic, sound or image from any Microsoft Web site may be copied or retransmitted unless expressly permitted by Microsoft.<br>
+        <br>
+        MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS MAKE NO REPRESENTATIONS ABOUT THE SUITABILITY OF THE INFORMATION CONTAINED IN THE DOCUMENTS AND RELATED GRAPHICS PUBLISHED AS PART OF THE SERVICES FOR ANY PURPOSE. ALL SUCH DOCUMENTS AND RELATED GRAPHICS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS WITH REGARD TO THIS INFORMATION, INCLUDING ALL WARRANTIES AND CONDITIONS OF MERCHANTABILITY, WHETHER EXPRESS, IMPLIED OR STATUTORY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF INFORMATION AVAILABLE FROM THE SERVICES.<br>
+        THE DOCUMENTS AND RELATED GRAPHICS PUBLISHED ON THE SERVICES COULD INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION HEREIN. MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS MAY MAKE IMPROVEMENTS AND/OR CHANGES IN THE PRODUCT(S) AND/OR THE PROGRAM(S) DESCRIBED HEREIN AT ANY TIME.<br>
+        NOTICES REGARDING SOFTWARE, DOCUMENTS AND SERVICES AVAILABLE ON THIS WEB SITE. IN NO EVENT SHALL MICROSOFT AND/OR ITS RESPECTIVE SUPPLIERS BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF SOFTWARE, DOCUMENTS, PROVISION OF OR FAILURE TO PROVIDE SERVICES, OR INFORMATION AVAILABLE FROM THE SERVICES.
+    </p>
+
+    <h2>NO UNLAWFUL OR PROHIBITED USE.</h2>
+    <p>As a condition of your use of the Services, you will not use the Services for any purpose that is unlawful or prohibited by these terms, conditions, and notices. You may not use the Services in any manner that could damage, disable, overburden, or impair any Microsoft server, or the network(s) connected to any Microsoft server, or interfere with any other party's use and enjoyment of any Services. You may not attempt to gain unauthorized access to any Services, other accounts, computer systems or networks connected to any Microsoft server or to any of the Services, through hacking, password mining or any other means. You may not obtain or attempt to obtain any materials or information through any means not intentionally made available through the Services.</p>
+
+    <h2>NOTICES AND PROCEDURE FOR MAKING CLAIMS OF COPYRIGHT INFRINGEMENT.</h2>
+    <p>Pursuant to Title 17, United States Code, Section 512(c)(2), notifications of claimed copyright infringement should be sent to Service Provider's Designated Agent. ALL INQUIRIES NOT RELEVANT TO THE FOLLOWING PROCEDURE WILL NOT RECEIVE A RESPONSE.</p>
+
+    <h2>LINKS TO THIRD PARTY SITES AND LICENSED CONTENT.</h2>
+    <p>THE LINKS IN THIS AREA WILL LET YOU LEAVE MICROSOFT'S SITE. THE LINKED SITES ARE NOT UNDER THE CONTROL OF MICROSOFT AND MICROSOFT IS NOT RESPONSIBLE FOR THE CONTENTS OF ANY LINKED SITE OR ANY LINK CONTAINED IN A LINKED SITE, OR ANY CHANGES OR UPDATES TO SUCH SITES. MICROSOFT IS NOT RESPONSIBLE FOR WEBCASTING OR ANY OTHER FORM OF TRANSMISSION RECEIVED FROM ANY LINKED SITE. MICROSOFT IS PROVIDING THESE LINKS TO YOU ONLY AS A CONVENIENCE, AND THE INCLUSION OF ANY LINK DOES NOT IMPLY ENDORSEMENT BY MICROSOFT OF THE SITE.</p>
+    <p>THIRD PARTY SCRIPTS AND CODE LINKED OR REFERENCED FROM THE SERVICES ARE LICENSED TO YOU BY THE THIRD PARTIES THAT OWN SUCH CODE, AND ARE NOT LICENSED BY MICROSOFT OTHER THAN FOR THE PURPOSES OF VIEWING AND INTERACTING WITH THE SERVICE.</p>
+
+    <h2>UNSOLICITED IDEA SUBMISSION POLICY.</h2>
+    <p>MICROSOFT OR ANY OF ITS EMPLOYEES DO NOT ACCEPT OR CONSIDER UNSOLICITED IDEAS, INCLUDING IDEAS FOR NEW ADVERTISING CAMPAIGNS, NEW PROMOTIONS, NEW PRODUCTS OR TECHNOLOGIES, PROCESSES, MATERIALS, MARKETING PLANS OR NEW PRODUCT NAMES. PLEASE DO NOT SEND ANY ORIGINAL CREATIVE ARTWORK, SAMPLES, DEMOS, OR OTHER WORKS. THE SOLE PURPOSE OF THIS POLICY IS TO AVOID POTENTIAL MISUNDERSTANDINGS OR DISPUTES WHEN MICROSOFT'S PRODUCTS OR MARKETING STRATEGIES MIGHT SEEM SIMILAR TO IDEAS SUBMITTED TO MICROSOFT. SO, PLEASE DO NOT SEND YOUR UNSOLICITED IDEAS TO MICROSOFT OR ANYONE AT MICROSOFT. IF, DESPITE OUR REQUEST THAT YOU NOT SEND US YOUR IDEAS AND MATERIALS, YOU STILL SEND THEM, PLEASE UNDERSTAND THAT MICROSOFT MAKES NO ASSURANCES THAT YOUR IDEAS AND MATERIALS WILL BE TREATED AS CONFIDENTIAL OR PROPRIETARY.</p>
+
+    <h2>COPYRIGHT NOTICE.</h2>
+    <p>© 2012 Microsoft Corporation. All rights reserved.</p>
+
+    <h2>TRADEMARKS.</h2>
+    <p>
+        Trademark information is available at <a href="http://go.microsoft.com/fwlink/?LinkId=264947">http://go.microsoft.com/fwlink/?LinkId=264947</a>
+    </p>
+    <p>Any rights not expressly granted herein are reserved.</p>
+    <p>Send your questions to TypeScriptFeedback@microsoft.com.</p>
+
+</div>
+
+
+    <div class="copyright">
+        <a href="http://go.microsoft.com/fwlink/?LinkId=264945">Privacy Statement</a> | <a href="/Terms" target="_blank">Terms of Use</a> | <a href="http://go.microsoft.com/fwlink/?LinkId=264947">Trademarks</a> &copy; 2012 - 2015 <img src="../Content/images/microsoft_logo_90x16.png" alt="Microsoft Logo" /><br />
+    </div>
+    <script src="/script/hashnav.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var gDomain = "m.webtrends.com";
+    var gDcsId = "dcsjwb9vb00000c932fd0rjc7_5p3t";
+    var gFpc = "WT_FPC";
+    var gTrackEvents = "1";
+    if (document.cookie.indexOf(gFpc + "=") == -1) { document.write("<SCR" + "IPT TYPE='text/javascript' SRC='" + "//" + gDomain + "/" + gDcsId + "/wtid.js" + "'><\/SCR" + "IPT>"); }
+    </script>
+    <script type="text/javascript" src="//js.microsoft.com/library/mnp/2/wt/js/wt.js"></script><noscript><img border="0" name="DCSIMG" width="1" height="1" src="//m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No"></noscript>
+
+   
+</body>
+</html>
