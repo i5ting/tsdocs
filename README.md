@@ -1,15 +1,15 @@
-# cgo 
+# tsdoc 
 
-language syntax compare
+offline doc with http://www.typescriptlang.org/Tutorial
 
 ## Install 
 
-    [sudo] npm install -g cgo
+    [sudo] npm install -g tsdoc
   
 ## Usage
 
 in terminal 
 
 ```
-  cgo
+  tsdoc
 ```
